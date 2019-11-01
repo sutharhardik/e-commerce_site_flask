@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+    <title>Zoter - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description">
+    <meta content="Mannatthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../../project/static/adminResources/images/favicon.ico">
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/adminResources/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../../static/adminResources/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body><!-- Begin page -->
+<div class="accountbg"></div>
+<div class="wrapper-page">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center"><a href="index.html" class="logo logo-admin"><img
+                    src="../../static/adminResources/images/e-logo.png" height="20" alt="logo"></a></div>
+            <div class="px-3 pb-3">
+                <form class="form-horizontal m-t-20" method="post" action="/checkLogin">
+                    <div class="form-group row">
+                        <div class="col-12"><label>E mail:</label><input class="form-control" type="email" name="loginEmail" required="" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12"><label>Password:</label><input class="form-control" name="loginPassword" type="password" required=""
+                                                   placeholder="Password"></div>
+                    </div>
+                    {{ msg }}
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <div class="custom-control custom-checkbox"><input type="checkbox"
+                                                                               class="custom-control-input"
+                                                                               id="customCheck1"> <label
+                                    class="custom-control-label" for="customCheck1">Remember me</label></div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center row m-t-20">
+                        <div class="col-12">
+                            <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Log In
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10 mb-0 row">
+                        <div class="col-sm-7 m-t-20"><a href="pages-recoverpw.html" class="text-muted"><i
+                                class="mdi mdi-lock"></i>
+                            <small>Forgot your password ?</small>
+                        </a></div>
+                        <div class="col-sm-5 m-t-20"><a href="/loadregister" class="text-muted"><i
+                                class="mdi mdi-account-circle"></i>
+                            <small>Create an account ?</small>
+                        </a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- jQuery  -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/modernizr.min.js"></script>
+<script src="../../static/adminResources/js/detect.js"></script>
+<script src="../../static/adminResources/js/fastclick.js"></script>
+<script src="../../static/adminResources/js/jquery.blockUI.js"></script>
+<script src="../../static/adminResources/js/waves.js"></script>
+<script src="../../static/adminResources/js/jquery.nicescroll.js"></script><!-- App js -->
+<script src="../../static/adminResources/js/app.js"></script>
+</body>
+</html>

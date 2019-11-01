@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+    <title>Zoter - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description">
+    <meta content="Mannatthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/adminResources/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../../static/adminResources/css/style.css" rel="stylesheet" type="text/css">
+
+
+
+    <style type="text/css">
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding: 1.2em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: ' ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+</style>
+
+</head>
+<body class="fixed-left">
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner"></div>
+    </div>
+</div>
+<!-- Begin page -->
+<div id="wrapper">
+    <!-- ========== Left Sidebar Start ========== -->
+   {% include "seller/sidebar.html" %}
+        <!-- end sidebarinner -->
+    </div>
+    <!-- Left Sidebar End --><!-- Start right Content here -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <!-- Top Bar Start -->
+            {% include "seller/header.html" %}
+            <!-- Top Bar End -->
+            <div class="page-content-wrapper">
+                <br class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="btn-group float-right">
+                                    <!--<ol class="breadcrumb hide-phone p-0 m-0">
+                                        <li class="breadcrumb-item"><a href="#">Zoter</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                                        <li class="breadcrumb-item active">Validation</li>
+                                    </ol>-->
+                                </div>
+
+                                <h4 class="page-title">Add Feedback</h4>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- end page title end breadcrumb -->
+
+
+                    <br class="row">
+
+                            <div class="card">
+                                <div class="card-body">
+                                   <!-- <h4 class="mt-0 header-title">Validation type</h4>
+                                    <p class="text-muted mb-4 font-14">Parsley is a javascript form validation library.
+                                        It helps you provide your users with feedback on their form submission before
+                                        sending it to your server.</p>-->
+
+                                    <form action="/insertfeedback" method="post">
+                                        <div class="form-group mb-0"><label class="mb-2 pb-1">Subject</label> <input
+                                                type="text" name="feedbackSubject" class="form-control" required placeholder="Feedback Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="my-2 py-1">Description</label>
+                                            <div><textarea required class="form-control" rows="5" required placeholder="Feedback Description" name="feedbackDescription"></textarea></div>
+                                        </div>
+                                        <section>
+								<div class="form-group ">
+										<div class="rating">
+									<h4> <span class="flaticon-house-key"></span>Rating</h4>
+									<input type="radio" id="star5" name="feedbackRating" value="5" /><label for="star5" title="Rocks!"><span class="fa fa-star checked"></span></label>
+									<input type="radio" id="star4" name="feedbackRating" value="4" /><label for="star4" title="Pretty good"><span class="fa fa-star checked"></span></label>
+									<input type="radio" id="star3" name="feedbackRating" value="3" /><label for="star3" title="Meh"><span class="fa fa-star checked"></span></label>
+									<input type="radio" id="star2" name="feedbackRating" value="2" /><label for="star2" title="Kinda bad"><span class="fa fa-star checked"></span></label>
+									<input type="radio" id="star1" name="feedbackRating" value="1" /><label for="star1" title="Sucks big time"><span class="fa fa-star checked"></span></label>
+										</div>
+								</div>
+                                        </section>
+
+
+
+
+
+                                        <div class="form-group mb-0">
+                                            <div>
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                    Submit
+                                                </button>
+                                                <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                                    Cancel
+                                                </button>
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+                </br>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- content -->
+       {% include "seller/footer.html" %}
+    </div>
+    <!-- End Right content here -->
+</div>
+<!-- END wrapper --><!-- jQuery  -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/modernizr.min.js"></script>
+<script src="../../static/adminResources/js/detect.js"></script>
+<script src="../../static/adminResources/js/fastclick.js"></script>
+<script src="../../static/adminResources/js/jquery.blockUI.js"></script>
+<script src="../../static/adminResources/js/waves.js"></script>
+<script src="../../static/adminResources/js/jquery.nicescroll.js"></script><!-- Parsley js -->
+<script src="../../static/adminResources/js/parsley.min.js"></script>
+<script type="text/javascript">$(document).ready(function () {
+    $('form').parsley();
+});
+</script><!-- App js -->
+<script src="../../static/adminResources/js/app.js"></script>
+</body>
+</html>

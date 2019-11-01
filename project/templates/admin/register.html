@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+    <title>Zoter - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description">
+    <meta content="Mannatthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../../project/static/adminResources/images/favicon.ico">
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/adminResources/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../../static/adminResources/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="fixed-left" ><!-- Begin page -->
+<div class="accountbg"></div>
+<div class="wrapper-page">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center"><a href="index.html" class="logo logo-admin"><img
+                    src="../../static/adminResources/images/e-logo.png" height="20" alt="logo"></a></div>
+            <div class="p-3">
+                <form class="form-horizontal" action="/insertregister" method="post">
+
+                            <label>
+                                Name:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" name="registerName" type="text" required="" placeholder="Name"></div>
+                                </div>
+                            </label>
+                            <label>
+                                Address:
+                                <div class="form-group row">
+                                    <div class="col-12"><textarea class="form-control"name="registerAddress" required="" placeholder="address"></textarea></div>
+                                </div>
+                                <//label>
+                            <label>
+                                Gender:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="radio" name="registerGender" value="Male" required="" placeholder="">Male</div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="radio" name="registerGender" required="" placeholder="">Female</div>
+                                </div>
+                                <//label>
+                            <label>
+                                <label>
+                                Area:
+                                <fieldset>
+                                    <p>
+
+                                     <select id = "myList" name="registerArea">
+                                       <option >one</option>
+                                       <option >two</option>
+                                       <option >three</option>
+                                       <option >four</option>
+                                     </select>
+                                    </p>
+                                </fieldset>
+                            <//label>
+                            <label>
+                                City:
+                                <fieldset>
+                                    <p>
+
+                                     <select id = "myList" name="registerCity">
+                                       <option >one</option>
+                                       <option >two</option>
+                                       <option >three</option>
+                                       <option >four</option>
+                                     </select>
+                                    </p>
+                                </fieldset>
+                            <//label>
+                                <label>
+                                Pincode:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="text" name="registerPincode" required="" placeholder="Pincode" maxlength="6"></div>
+                                </div>
+                                <//label>
+                            <label>
+                                Mobile No:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="text" name="registerMobileno" required="" placeholder="Mobile No"></div>
+                                </div>
+                                <//label>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label>Email:
+                                <div> <input id="email" type="email" name="registerEmail" pattern="^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9._%-]+.[a-zA-Z]{2,6}$" required placeholder="Enter you Email"></div>
+                            <//label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <div class="custom-control custom-checkbox"><input type="checkbox"
+                                                                               class="custom-control-input"
+                                                                               id="customCheck1"> <label
+                                    class="custom-control-label font-weight-normal" for="customCheck1">
+                                   <a href="#" class="text-muted"> I accept Terms and Conditions</a></label></div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center row m-t-20">
+                        <div class="col-12">
+                            <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Register
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10 mb-0 row">
+                        <div class="col-12 m-t-20 text-center"><a href="admin/login.html" class="text-muted">Already
+                            have account?</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- jQuery  -->
+<script src="../../static/adminResources/js/jquery.min.js"></script>
+<script src="../../static/adminResources/js/popper.min.js"></script>
+<script src="../../static/adminResources/js/bootstrap.min.js"></script>
+<script src="../../static/adminResources/js/modernizr.min.js"></script>
+<script src="../../static/adminResources/js/detect.js"></script>
+<script src="../../static/adminResources/js/fastclick.js"></script>
+<script src="../../static/adminResources/js/jquery.blockUI.js"></script>
+<script src="../../static/adminResources/js/waves.js"></script>
+<script src="../../static/adminResources/js/jquery.nicescroll.js"></script><!-- App js -->
+<script src="../../static/adminResources/js/app.js"></script>
+</body>
+
+</html>

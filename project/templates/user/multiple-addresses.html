@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Multiple Address Shipping</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
+<meta name="description" content="Default Description">
+<meta name="keywords" content="fashion, store, E-commerce">
+<meta name="robots" content="*">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<link rel="icon" href="#" type="image/x-icon">
+<link rel="shortcut icon" href="#" type="image/x-icon">
+
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/font-awesome.css" media="all">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/revslider.css" >
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/owl.theme.css">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/jquery.bxslider.css">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/jquery.mobile-menu.css">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="../../static/userResources/css/responsive.css" media="all">
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+{% include 'user/header.html' %}
+
+  <div class="page-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="state_bar">
+        <ul class="checkout-progress" id="checkout-progress-state">
+          <li title="Select Addresses" class="active first">Select Addresses</li>
+          <li title="Shipping Information">Shipping Information</li>
+          <li title="Billing Information">Billing Information</li>
+          <li title="Place Order">Place Order</li>
+          <li title="Order Success" class="last">Order Success</li>
+        </ul>
+      </div>
+          </div>
+          <!--col-xs-12--> 
+        </div>
+        <!--row--> 
+      </div>
+      <!--container--> 
+
+  </div>
+  
+      
+  <!-- BEGIN Main Container -->
+  
+  <div class="main-container col1-layout wow bounceInUp animated animated" style="visibility: visible;">
+    <div class="main">
+      
+      <!--state_bar--> 
+
+      <div class="multiple_addresses multiple-checkout container">
+        <div class="table-responsive">
+          <form id="checkout_multishipping_form" action="#" method="post">
+            <div class="page-title_multi">
+              <h2>Ship to Multiple Addresses</h2>
+            </div>
+            <!--page-title_multi-->
+            <div class="title-buttons">
+              <button type="button" title="Enter a New Address" class="button new-address" onClick="$(&#39;add_new_address_flag&#39;).value=1; $(&#39;checkout_multishipping_form&#39;).submit();"><span>Enter a New Address</span></button>
+            </div>
+            <!--title-buttons-->
+            <div class="addresses">
+              <fieldset class="">
+                <input type="hidden" name="continue" value="0" id="can_continue_flag">
+                <input type="hidden" name="new_address" value="0" id="add_new_address_flag">
+                Please select shipping address for applicable items
+                <table class="data-table table-striped" id="multiship-addresses-table">
+                 
+                  <thead>
+                    <tr class="first last">
+                      <th>Product</th>
+                      <th class="a-center">Qty</th>
+                      <th>Send To</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr class="first last">
+                      <td colspan="4" class="a-right last"><button type="submit" title="Update Qty &amp; Addresses" class="button btn-update" onClick="$(&#39;can_continue_flag&#39;).value=0"><span>Update Qty &amp; Addresses</span></button></td>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr class="first odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[0][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[0][24761][address]" id="ship_0_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[1][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[1][24761][address]" id="ship_1_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[2][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[2][24761][address]" id="ship_2_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[3][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[3][24761][address]" id="ship_3_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[4][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[4][24761][address]" id="ship_4_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[5][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[5][24761][address]" id="ship_5_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Georgette Animal Print</a></h3></td>
+                      <td><input type="text" name="ship[6][24761][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[6][24761][address]" id="ship_6_24761_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Slim Fit Casual Shirt</a></h3></td>
+                      <td><input type="text" name="ship[7][24814][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[7][24814][address]" id="ship_7_24814_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Sanctuary Clothing Women's Top</a></h3></td>
+                      <td><input type="text" name="ship[8][24845][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[8][24845][address]" id="ship_8_24845_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women Casual Wear</a></h3></td>
+                      <td><input type="text" name="ship[9][24846][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[9][24846][address]" id="ship_9_24846_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Quick Crochet Tops</a></h3></td>
+                      <td><input type="text" name="ship[10][24850][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[10][24850][address]" id="ship_10_24850_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Quick Crochet Tops</a></h3></td>
+                      <td><input type="text" name="ship[11][24850][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[11][24850][address]" id="ship_11_24850_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Quick Crochet Tops</a></h3></td>
+                      <td><input type="text" name="ship[12][24850][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[12][24850][address]" id="ship_12_24850_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Rexine Bean Bag</a></h3></td>
+                      <td><input type="text" name="ship[13][24851][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[13][24851][address]" id="ship_13_24851_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Softwear Women's Designer</a></h3></td>
+                      <td><input type="text" name="ship[14][24853][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[14][24853][address]" id="ship_14_24853_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="even">
+                      <td><h3 class="product-name"><a href="product-detail.html">Vivante Gorgeous Cotton</a></h3></td>
+                      <td><input type="text" name="ship[15][24854][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[15][24854][address]" id="ship_15_24854_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                    <tr class="last odd">
+                      <td><h3 class="product-name"><a href="product-detail.html">Women's Crepe Printed Black</a></h3></td>
+                      <td><input type="text" name="ship[16][25414][qty]" value="1" size="2" class="input-text qty"></td>
+                      <td><select name="ship[16][25414][address]" id="ship_16_25414_address" class="" title="">
+                          <option value="1" selected="selected">john doe, Street road, AL, Alabama 42136, United States</option>
+                        </select></td>
+                      <td class="a-center last"><a class="btn-remove btn-remove2" href="#" title="Remove Item"></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </fieldset>
+              <!--multiple-checkout--> 
+            </div>
+            <!--addresses-->
+            
+          </form>
+        </div>
+        <!--table-responsive--> 
+        
+        <div class="buttons-set"> <a class="back-link" href="shopping-cart.html"><small>« </small>Back to Shopping Cart</a>
+          <button type="submit" title="Continue to Shipping Information" class="button btn-continue" onClick="$(&#39;can_continue_flag&#39;).value=1"><span>Continue to Shipping Information</span></button>
+        </div>
+      </div>
+      <!--multiple_addresses--> 
+    </div>
+    <!--main-container--> 
+    
+  </div>
+  <!--col1-layout-->
+  <!-- For version 1,2,3,4,6 -->
+  
+  {% include 'user/footer.html' %}
+
+  <!-- End For version 1,2,3,4,6 -->
+  
+</div>
+<!--page-->
+<!-- Mobile Menu-->
+<div id="mobile-menu">
+  <ul class="mobile-menu">
+   
+    <li>
+      <div class="home"><a href="#"><i class="icon-home"></i>Home</a> </div>
+    </li>
+    <li><span class="expand fa fa-plus"></span><a href="#">Pages</a>
+      <ul>
+        <li><a href="grid.html">Grid</a> </li>
+        <li> <a href="list.html">List</a> </li>
+        <li> <a href="product-detail.html">Product Detail</a> </li>
+        <li> <a href="shopping-cart.html">Shopping Cart</a> </li>
+        <li><span class="expand fa fa-plus"></span><a href="checkout.html">Checkout</a>
+          <ul>
+            <li><a href="checkout-method.html">Checkout Method</a> </li>
+            <li><a href="checkout-billing-info.html">Checkout Billing Info</a> </li>
+          </ul>
+        </li>
+        <li> <a href="wishlist.html">Wishlist</a> </li>
+        <li> <a href="dashboard.html">Dashboard</a> </li>
+        <li> <a href="multiple-addresses.html">Multiple Addresses</a> </li>
+        <li> <a href="about-us.html">About us</a> </li>
+        <li><span class="expand fa fa-plus"></span><a href="blog.html">Blog</a>
+          <ul>
+            <li><a href="blog-detail.html">Blog Detail</a> </li>
+          </ul>
+        </li>
+        <li><a href="contact-us.html">Contact us</a> </li>
+        <li><a href="404error.html">404 Error Page</a> </li>
+      </ul>
+    </li>
+    <li><span class="expand fa fa-plus"></span><a href="#">Women</a>
+      <ul>
+        <li><span class="expand fa fa-plus"></span> <a href="#" class="">Stylish Bag</a>
+          <ul>
+            <li> <a href="#" class="">Clutch Handbags</a> </li>
+            <li> <a href="#l" class="">Diaper Bags</a> </li>
+            <li> <a href="#" class="">Bags</a> </li>
+            <li> <a href="#" class="">Hobo handbags</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Material Bag</a>
+          <ul>
+            <li> <a href="#">Beaded Handbags</a> </li>
+            <li> <a href="#">Fabric Handbags</a> </li>
+            <li> <a href="#">Handbags</a> </li>
+            <li> <a href="#">Leather Handbags</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Shoes</a>
+          <ul>
+            <li> <a href="#">Flat Shoes</a> </li>
+            <li> <a href="#">Flat Sandals</a> </li>
+            <li> <a href="#">Boots</a> </li>
+            <li> <a href="#">Heels</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Jwellery</a>
+          <ul>
+            <li> <a href="#">Bracelets</a> </li>
+            <li> <a href="#">Necklaces &amp; Pendent</a> </li>
+            <li> <a href="#l">Pendants</a> </li>
+            <li> <a href="#">Pins &amp; Brooches</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Dresses</a>
+          <ul>
+            <li> <a href="#">Casual Dresses</a> </li>
+            <li> <a href="#">Evening</a> </li>
+            <li> <a href="#">Designer</a> </li>
+            <li> <a href="#">Party</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Swimwear</a>
+          <ul>
+            <li> <a href="#">Swimsuits</a> </li>
+            <li> <a href="#">Beach Clothing</a> </li>
+            <li> <a href="#">Clothing</a> </li>
+            <li> <a href="#">Bikinis</a> </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><span class="expand fa fa-plus"></span><a href="#">Men</a>
+      <ul>
+        <li><span class="expand fa fa-plus"></span> <a href="#" class="">Shoes</a>
+          <ul class="level1">
+            <li class="level2 nav-6-1-1"><a href="#">Sport Shoes</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Casual Shoes</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Leather Shoes</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">canvas shoes</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Dresses</a>
+          <ul class="level1">
+            <li class="level2 nav-6-1-1"><a href="#">Casual Dresses</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Evening</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Designer</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Party</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Jackets</a>
+          <ul class="level1">
+            <li class="level2 nav-6-1-1"><a href="#">Coats</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Formal Jackets</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Leather Jackets</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Blazers</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Watches</a>
+          <ul class="level1">
+            <li class="level2 nav-6-1-1"><a href="#">Fasttrack</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Casio</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Titan</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Tommy-Hilfiger</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Sunglasses</a>
+          <ul class="level1">
+            <li class="level2 nav-6-1-1"><a href="#">Ray Ban</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Fasttrack</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Police</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Oakley</a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#">Accesories</a>
+          <ul class="level1">
+            <li class="level2 nav-6-1-1"><a href="#">Backpacks</a> </li>
+
+            <li class="level2 nav-6-1-1"><a href="#">Wallets</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Laptops Bags</a> </li>
+            <li class="level2 nav-6-1-1"><a href="#">Belts</a> </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><span class="expand fa fa-plus"></span><a href="#">Electronics</a>
+      <ul>
+        <li><span class="expand fa fa-plus"></span> <a href="#"><spanMobiles</span></a>
+          <ul>
+            <li> <a href="#"><span>Samsung</span></a> </li>
+            <li> <a href="#"><span>Nokia</span></a> </li>
+            <li> <a href="#"><span>IPhone</span></a> </li>
+            <li> <a href="#"><span>Sony</span></a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#" class=""><span>Accesories</span></a>
+          <ul>
+            <li> <a href="#"><span>Mobile Memory Cards</span></a> </li>
+            <li> <a href="#"><span>Cases &amp; Covers</span></a> </li>
+            <li> <a href="#"><span>Mobile Headphones</span></a> </li>
+            <li> <a href="#"><span>Bluetooth Headsets</span></a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#"><span>Cameras</span></a>
+          <ul>
+            <li> <a href="#"><span>Camcorders</span></a> </li>
+            <li> <a href="#"><span>Point &amp; Shoot</span></a> </li>
+            <li> <a href="#"><span>Digital SLR</span></a> </li>
+            <li> <a href="#"><span>Camera Accesories</span></a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#"><span>Audio &amp; Video</span></a>
+          <ul>
+            <li> <a href="#"><span>MP3 Players</span></a> </li>
+            <li> <a href="#"><span>IPods</span></a> </li>
+            <li> <a href="#"><span>Speakers</span></a> </li>
+            <li> <a href="#"><span>Video Players</span></a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#"><span>Computer</span></a>
+          <ul>
+            <li> <a href="#"><span>External Hard Disk</span></a> </li>
+            <li> <a href="#"><span>Pendrives</span></a> </li>
+            <li> <a href="#"><span>Headphones</span></a> </li>
+            <li> <a href="#"><span>PC Components</span></a> </li>
+          </ul>
+        </li>
+        <li><span class="expand fa fa-plus"></span> <a href="#"><span>Appliances</span></a>
+          <ul>
+            <li> <a href="#"><span>Vaccum Cleaners</span></a> </li>
+            <li> <a href="#"><span>Indoor Lighting</span></a> </li>
+            <li> <a href="#"><span>Kitchen Tools</span></a> </li>
+            <li> <a href="#"><span>Water Purifier</span></a> </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#">Furniture</a> </li>
+    <li><a href="#">Kids</a> </li>
+    <li><a href="contact-us.html">Contact Us</a> </li>
+  </ul>
+</div>
+<!-- JavaScript -->
+<script type="text/javascript" src="../../static/userResources/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/parallax.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/revslider.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/common.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../../static/userResources/js/jquery.mobile-menu.min.js"></script>
+<script>
+    // jQuery('.carousel').carousel({
+    //     interval: 5000 //changes the speed
+    // })
+    </script>
+</body>
+</html>

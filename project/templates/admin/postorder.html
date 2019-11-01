@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+        <title>Post Order</title>
+        <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../../static/adminResources/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="../../static/adminResources/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="fixed-left">
+        <!-- Begin page -->
+        <div class="accountbg"></div>
+        <div class="wrapper-page">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <a href="   " class="logo logo-admin">
+                            <h4>Post Order</h4>
+                        </a>
+                    </div>
+                    <div class="p-3">
+                        <form class="form-horizontal" action="/">
+                            <label>
+                                Product Name:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="text" required="" placeholder="Productname"></div>
+                                </div>
+                            </label>
+                            <label>
+                                Address:
+                                <div class="form-group row">
+                                    <div class="col-12"><textarea class="form-control" required="" placeholder="address" aria-required="true"></textarea></div>
+                                </div>
+                                <//label>
+                                <label>
+                                Mobile No:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="text" required="" placeholder="Mobile No" maxlength="10"></div>
+                                </div>
+                                <//label>
+                                 <label>
+                                Area:
+                                <fieldset>
+                                    <p>
+                                <label>Select area</label>
+                                     <select id = "myList">
+                                       <option value = "1">one</option>
+                                       <option value = "2">two</option>
+                                       <option value = "3">three</option>
+                                       <option value = "4">four</option>
+                                     </select>
+                                    </p>
+                                </fieldset>
+                            <//label>                    
+                            <label>
+                                City:
+                                <fieldset>
+                                    <p>
+                                <label>Select city</label>
+                                     <select id = "myList">
+                                       <option value = "1">one</option>
+                                       <option value = "2">two</option>
+                                       <option value = "3">three</option>
+                                       <option value = "4">four</option>
+                                     </select>
+                                    </p>
+                                </fieldset>
+                            <//label>
+                            <label>
+                                Email:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="" placeholder="Enter valid Email"></div>
+                                </div>
+                                <label>
+                                Quantity:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="text" required="" placeholder="Item Quantity"></div>
+                                </div>
+                            </label>
+                            <label>
+                                Amount:
+                                <div class="form-group row">
+                                    <div class="col-12"><input class="form-control" type="text" required="" placeholder="Total Amount"></div>
+                                </div>
+                            </label>
+                                <//label>
+                            <div class="form-group text-center row m-t-20">
+                                <div class="col-12"><button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Confirm Order</button>
+                                <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Cancel Order</button>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
